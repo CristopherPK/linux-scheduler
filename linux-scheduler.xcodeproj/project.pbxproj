@@ -31,7 +31,6 @@
 		F9A857E91BBCFF74005CFDAD /* process.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = process.hpp; sourceTree = "<group>"; };
 		F9A857EB1BBD0B81005CFDAD /* cpu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cpu.cpp; sourceTree = "<group>"; };
 		F9A857EC1BBD0B81005CFDAD /* cpu.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cpu.hpp; sourceTree = "<group>"; };
-		F9A857EE1BBF00A4005CFDAD /* input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +63,6 @@
 		F9A857E01BBCE18E005CFDAD /* linux-scheduler */ = {
 			isa = PBXGroup;
 			children = (
-				F9A857EE1BBF00A4005CFDAD /* input.txt */,
 				F9A857E11BBCE18E005CFDAD /* main.cpp */,
 				F9A857EB1BBD0B81005CFDAD /* cpu.cpp */,
 				F9A857EC1BBD0B81005CFDAD /* cpu.hpp */,
@@ -249,6 +247,7 @@
 				F9A857E71BBCE18E005CFDAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
