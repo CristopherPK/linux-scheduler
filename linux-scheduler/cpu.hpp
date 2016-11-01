@@ -10,21 +10,32 @@
 #define cpu_hpp
 
 #include <iostream>
-#include <queue>
+#include <iomanip>
+#include <list>
 #include "process.hpp"
 
 class CPU {
-    int clock;
-    Process * current;
-    queue<Process> * readyQueue;
-    queue<Process> * activeQueue;
-    queue<Process> * expiredQueue;
-    queue<Process> * ioQueue;
-    queue<Process> * finishedQueue;
     
 public:
-    CPU();
+    CPU(list<Process> * processes);
     ~CPU();
+    int tick();
+    int submit();
+    int sched();
+    int isDone();
+    int report();
+    
+private:
+    int clock;
+    Process * curr;
+    list<Process> * startQueue;
+    list<Process> * activeQueue;
+    list<Process> * expiredQueue;
+    list<Process> * ioQueue;
+    list<Process> * finishedQueue;
+    int isEmpty();
+    int executeIO();
+    
 };
 
 #endif /* cpu_hpp */

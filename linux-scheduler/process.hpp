@@ -11,29 +11,50 @@
 
 #include <iostream>
 #include <list>
+#include <string>
 
 using namespace std;
 
 class Process {
-    int pid;
-    int nice;
-    int arrivalTime;
-    int startTime;
-    int endTime;
-    int priority;
-    int timeSlice;
-    list<int> * cpuBursts;
-    list<int> * ioBursts;
     
 public:
     Process();
     Process(int pid, int nice, int arrivalTime,
-            list<int> * cputBursts, list<int> * ioBursts);
+            list<int> * cpuBursts, list<int> * ioBursts);
+    Process & operator = (const Process & other);
+    Process (const Process & other);
     ~Process();
-    int start(int clock);
+    int getPid();
+    int getArrivalTime();
+    int getPriority();
+    int getTimeSlice();
+    int getEndTime();
+    int getCpuTime();
+    int getIOTime();
+    int hasArrived(int clock);
     int end(int clock);
-    int totalCPU();
-    int totalIO();
+    int calcPriority();
+    int calcTimeSlice();
+    int execute(int clock);
+    int executeIO();
+    int cpuFinished();
+    int isFinished();
+    int isExhausted();
+    string toString();
+    
+private:
+    int pid;
+    int arrivalTime;
+    int startTime;
+    int endTime;
+    int priority;
+    int originalPriority;
+    int timeSlice;
+    int totalCPU;
+    int totalIO;
+    list<int> * cpuBursts;
+    list<int> * ioBursts;
+    
 };
 
 #endif /* process_hpp */
